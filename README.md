@@ -1,2 +1,2 @@
-# ICT Billing Software
+# ICT Billing System
 
