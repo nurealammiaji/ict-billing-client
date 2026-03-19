@@ -1,11 +1,38 @@
 import React from 'react';
 import './App.css'
 import Home from './pages/Home/Home';
+import { Outlet } from 'react-router-dom';
+import { TbLayoutSidebarLeftExpand } from 'react-icons/tb';
+import Menu from './components/Menu/Menu';
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <div className="drawer lg:drawer-open">
+        <input id="layout-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content">
+          {/* Navbar */}
+          <nav className="navbar w-full bg-base-300 h-20">
+            <label htmlFor="layout-drawer" aria-label="open sidebar" className="btn btn-square btn-ghost">
+              {/* Sidebar toggle icon */}
+              <TbLayoutSidebarLeftExpand className='text-warning text-2xl' />
+            </label>
+            <div className="px-4 text-2xl font-semibold">ICT Billing</div>
+          </nav>
+          {/* Page content here */}
+          <div className="p-4">
+            <Outlet />
+          </div>
+        </div>
+
+        <div className="drawer-side is-drawer-close:overflow-visible">
+          <label htmlFor="layout-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+          <div className="grid min-h-full flex-col items-start bg-base-200 is-drawer-close:w-23 is-drawer-open:w-72">
+            {/* Sidebar content here */}
+            <Menu />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
