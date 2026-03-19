@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home/Home';
 import { Outlet } from 'react-router-dom';
 import { TbLayoutSidebarLeftExpand } from 'react-icons/tb';
+import { LuMenu } from "react-icons/lu";
 import Menu from './components/Menu/Menu';
 
 const App = () => {
@@ -13,9 +14,10 @@ const App = () => {
         <div className="drawer-content">
           {/* Navbar */}
           <nav className="navbar w-full bg-base-300 h-20">
-            <label htmlFor="layout-drawer" aria-label="open sidebar" className="btn btn-square btn-ghost">
+            <label htmlFor="layout-drawer" aria-label="open sidebar" className="btn btn-square btn-ghost tooltip tooltip-bottom" data-tip="Menu">
               {/* Sidebar toggle icon */}
-              <TbLayoutSidebarLeftExpand className='text-warning text-2xl' />
+              {/* <TbLayoutSidebarLeftExpand className='text-warning text-2xl' /> */}
+              <LuMenu className='text-2xl' />
             </label>
             <div className="px-4 text-2xl font-semibold">ICT Billing</div>
           </nav>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { PiGear, PiHouse, PiMagnifyingGlass, PiPackage, PiSticker } from "react-icons/pi";
-import { LuClipboardList, LuFileSearch, LuPhoneCall, LuSatelliteDish, LuSearch, LuSettings, LuWifi } from "react-icons/lu";
+import { LuClipboardList, LuHouse, LuPhoneCall, LuSatelliteDish, LuSearch, LuSettings, LuWifi } from "react-icons/lu";
 
 const Menu = () => {
     return (
@@ -16,40 +15,40 @@ const Menu = () => {
                 {/* List item First */}
                 <li>
                     <NavLink to={"/"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Home">
-                        <PiHouse className='text-4xl' />
+                        <LuHouse className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Home</span>
                     </NavLink>
                 </li>
 
                 {/* List item 2 */}
                 <li>
-                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
-                        <LuSatelliteDish className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Dish</span>
+                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search">
+                        <LuSearch className='text-4xl'/>
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Search</span>
                     </NavLink>
                 </li>
 
                 {/* List item 3 */}
                 <li>
-                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
-                        <LuWifi className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Internet</span>
+                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
+                        <LuSatelliteDish className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Dish Packages</span>
                     </NavLink>
                 </li>
 
                 {/* List item 4 */}
                 <li>
-                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="My Bills">
-                        <LuClipboardList className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">My Bills</span>
+                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
+                        <LuWifi className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Internet Packages</span>
                     </NavLink>
                 </li>
 
                 {/* List item 5 */}
                 <li>
-                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search Bills">
-                        <LuFileSearch className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Search Bills</span>
+                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="My Bills">
+                        <LuClipboardList className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">All Bills</span>
                     </NavLink>
                 </li>
 
