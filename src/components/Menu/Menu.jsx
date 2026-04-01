@@ -14,56 +14,55 @@ const Menu = () => {
                 <br />
                 {/* List item First */}
                 <li>
-                    <NavLink to={"/"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Home">
+                    <NavLink to={"/"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Home">
                         <LuHouse className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Home</span>
                     </NavLink>
                 </li>
 
-                {/* List item 2 */}
+                {/* List item 1 */}
                 <li>
-                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search">
-                        <LuSearch className='text-4xl'/>
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Search</span>
-                    </NavLink>
-                </li>
-
-                {/* List item 3 */}
-                <li>
-                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
-                        <LuSatelliteDish className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Dish Pack</span>
-                    </NavLink>
-                </li>
-
-                {/* List item 4 */}
-                <li>
-                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
-                        <LuWifi className='text-4xl' />
-                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Internet Pack</span>
-                    </NavLink>
-                </li>
-
-                {/* List item 5 */}
-                <li>
-                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="All Bills">
+                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="All Bills">
                         <LuNotebookText className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">All Bills</span>
                     </NavLink>
                 </li>
 
-
-                {/* List item 6 */}
+                {/* List item 2 */}
                 <li>
-                    <NavLink to={"/helpline"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Helpline">
+                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
+                        <LuSatelliteDish className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Dish Packs</span>
+                    </NavLink>
+                </li>
+
+                {/* List item 3 */}
+                <li>
+                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
+                        <LuWifi className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Internet Packs</span>
+                    </NavLink>
+                </li>
+
+                {/* List item 4 */}
+                <li>
+                    <NavLink to={"/helpline"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Helpline">
                         <LuPhoneCall className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Helpline</span>
                     </NavLink>
                 </li>
 
+                {/* List item 5 */}
+                <li>
+                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search">
+                        <LuSearch className='text-4xl' />
+                        <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Search</span>
+                    </NavLink>
+                </li>
+
                 {/* List item Last */}
                 <li>
-                    <NavLink to={"/settings"} className={({ isActive }) => isActive ? 'bg-secondary text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Settings">
+                    <NavLink to={"/settings"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Settings">
                         <LuSettings className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Settings</span>
                     </NavLink>
