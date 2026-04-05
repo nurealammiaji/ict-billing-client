@@ -10,11 +10,11 @@ const Menu = () => {
                     <img src="./dscsc.png" className='w-full h-full' alt="" />
                 </div>
             </div>
-            <ul className="menu w-full grow *:m-2">
+            <ul className="menu w-full grow *:m-2 text-white">
                 <br />
                 {/* List item First */}
                 <li>
-                    <NavLink to={"/"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Home">
+                    <NavLink to={"/"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Home">
                         <LuHouse className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Home</span>
                     </NavLink>
@@ -22,7 +22,7 @@ const Menu = () => {
 
                 {/* List item 1 */}
                 <li>
-                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="All Bills">
+                    <NavLink to={"/bills"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="All Bills">
                         <LuNotebookText className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">All Bills</span>
                     </NavLink>
@@ -30,7 +30,7 @@ const Menu = () => {
 
                 {/* List item 2 */}
                 <li>
-                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
+                    <NavLink to={"/dish"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Dish">
                         <LuSatelliteDish className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Dish Packs</span>
                     </NavLink>
@@ -38,7 +38,7 @@ const Menu = () => {
 
                 {/* List item 3 */}
                 <li>
-                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
+                    <NavLink to={"/internet"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Internet">
                         <LuWifi className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Internet Packs</span>
                     </NavLink>
@@ -46,7 +46,7 @@ const Menu = () => {
 
                 {/* List item 4 */}
                 <li>
-                    <NavLink to={"/helpline"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Helpline">
+                    <NavLink to={"/helpline"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Helpline">
                         <LuPhoneCall className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Helpline</span>
                     </NavLink>
@@ -54,7 +54,7 @@ const Menu = () => {
 
                 {/* List item 5 */}
                 <li>
-                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search">
+                    <NavLink to={"/search"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Search">
                         <LuSearch className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Search</span>
                     </NavLink>
@@ -62,7 +62,7 @@ const Menu = () => {
 
                 {/* List item Last */}
                 <li>
-                    <NavLink to={"/settings"} className={({ isActive }) => isActive ? 'bg-info text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Settings">
+                    <NavLink to={"/settings"} className={({ isActive }) => isActive ? 'bg-[#2F341A] text-white' : `is-drawer-close:tooltip is-drawer-close:tooltip-right`} data-tip="Settings">
                         <LuSettings className='text-4xl' />
                         <span className="ml-2 is-drawer-close:hidden text-xl font-semibold">Settings</span>
                     </NavLink>
