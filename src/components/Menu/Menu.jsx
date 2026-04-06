@@ -5,7 +5,7 @@ import { LuClipboardList, LuHouse, LuNotebookText, LuPhoneCall, LuReceipt, LuSat
 const Menu = () => {
     return (
         <div>
-            <div className='flex justify-center items-center mt-3'>
+            <div className='flex justify-center items-center my-3'>
                 <div className='h-16 w-16'>
                     <img src="./dscsc.png" className='w-full h-full' alt="" />
                 </div>
