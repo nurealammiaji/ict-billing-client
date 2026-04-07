@@ -6,7 +6,7 @@ const Dish = () => {
   const dishPackOne = {
     name: "Dish TV Pack",
     price: "$15",
-    remark: {text: "Popular", show: false},
+    remark: { text: "Popular", show: false },
     features: [
       { text: "Access to 100+ channels", deleted: false },
       { text: "HD quality viewing", deleted: false },
@@ -17,7 +17,7 @@ const Dish = () => {
   const dishPackTwo = {
     name: "Dish TV Pack Plus",
     price: "$25",
-    remark: {text: "Most Popular", show: true},
+    remark: { text: "Most Popular", show: true },
     features: [
       { text: "Access to 200+ channels", deleted: false },
       { text: "4K Ultra HD quality viewing", deleted: false },
@@ -28,15 +28,17 @@ const Dish = () => {
 
   return (
     <div>
-      <div>
-        <h1 className='text-4xl font-bold text-center mt-10'>Dish Packs</h1>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center mt-10 w-3/4 mx-auto'>
+      <div className='pt-10'>
         <div>
-          <PackCard packDetails={dishPackOne} />
+          <h1 className='text-4xl font-bold text-center text-white underline underline-offset-10'>Dish Packs</h1>
         </div>
-        <div>
-          <PackCard packDetails={dishPackTwo} />
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center mt-10 w-3/4 mx-auto pt-10'>
+          <div>
+            <PackCard packDetails={dishPackOne} />
+          </div>
+          <div>
+            <PackCard packDetails={dishPackTwo} />
+          </div>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ const App = () => {
         />
         <div className="drawer-content">
           {/* Navbar */}
-          <nav className="navbar z-10 w-full bg-[#7C884C] h-20">
+          <nav className="navbar z-100 w-full bg-[#7C884C] h-20 sticky top-0">
             <label htmlFor="layout-drawer" aria-label="open sidebar" className="btn btn-square btn-ghost tooltip tooltip-bottom" data-tip="Menu">
               {/* Sidebar toggle icon */}
               {/* <TbLayoutSidebarLeftExpand className='text-warning text-2xl' /> */}

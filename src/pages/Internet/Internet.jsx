@@ -29,15 +29,17 @@ const Internet = () => {
 
     return (
         <div>
-            <div>
-                <h1 className='text-4xl font-bold text-center mt-10'>Internet Packs</h1>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center mt-10 w-3/4 mx-auto'>
+            <div className='pt-10'>
                 <div>
-                    <PackCard packDetails={internetPackOne} />
+                    <h1 className='text-4xl font-bold text-center text-white underline underline-offset-10'>Internet Packs</h1>
                 </div>
-                <div>
-                    <PackCard packDetails={internetPackTwo} />
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-center mt-10 w-3/4 mx-auto pt-10'>
+                    <div>
+                        <PackCard packDetails={internetPackOne} />
+                    </div>
+                    <div>
+                        <PackCard packDetails={internetPackTwo} />
+                    </div>
                 </div>
             </div>
         </div>
