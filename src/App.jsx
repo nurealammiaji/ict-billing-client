@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div>
       <div className="drawer lg:drawer-open">
-        {/* <input id="layout-drawer" type="checkbox" className="drawer-toggle" /> */}
         <input
           id="layout-drawer"
           type="checkbox"
@@ -30,7 +29,7 @@ const App = () => {
             <div className="px-4 text-2xl font-semibold">ICT Billing</div>
           </nav>
           {/* Page content here */}
-          <div className="bg-fixed bg-center bg-cover h-screen" style={{ backgroundImage: `url(${bg})` }}>
+          <div className="bg-fixed bg-center bg-cover min-h-screen" style={{ backgroundImage: `url(${bg})` }}>
             <div className="absolute inset-0 bg-black/50"></div>
             <div className='relative z-10 h-full'>
               <Outlet />

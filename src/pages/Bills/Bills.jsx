@@ -2,6 +2,31 @@ import React from 'react';
 import { LuFilePlus } from "react-icons/lu";
 
 const Bills = () => {
+
+    const internetBills = [
+        {
+            id: 1,
+            name: "John Doe",
+            amount: 50,
+            dueDate: "2024-07-15",
+            status: "Unpaid"
+        },
+        {
+            id: 2,
+            name: "Jane Smith",
+            amount: 75,
+            dueDate: "2024-07-20",
+            status: "Paid"
+        },
+        {
+            id: 3,
+            name: "Alice Johnson",
+            amount: 100,
+            dueDate: "2024-07-25",
+            status: "Unpaid"
+        }
+    ];
+
     return (
         <div>
             <div className='pt-10'>
@@ -35,7 +60,7 @@ const Bills = () => {
                                         {/* if there is a button in form, it will close the modal */}
                                         <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
                                     </form>
-                                    <h3 className="font-bold text-lg">New Bill</h3>
+                                    <h3 className="font-bold text-lg text-center">New Bill</h3>
                                     <div className='divider'></div>
                                     <div className="py-4">
                                         {/* <BillCreationForm /> */}
@@ -51,34 +76,71 @@ const Bills = () => {
                                 {/* head */}
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>S/N</th>
                                         <th>Name</th>
-                                        <th>Job</th>
-                                        <th>Favorite Color</th>
+                                        <th>Due Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {/* row 1 */}
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Cy Ganderton</td>
-                                        <td>Quality Control Specialist</td>
-                                        <td>Blue</td>
-                                    </tr>
-                                    {/* row 2 */}
-                                    <tr>
-                                        <th>2</th>
-                                        <td>Hart Hagerty</td>
-                                        <td>Desktop Support Technician</td>
-                                        <td>Purple</td>
-                                    </tr>
-                                    {/* row 3 */}
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Brice Swyre</td>
-                                        <td>Tax Accountant</td>
-                                        <td>Red</td>
-                                    </tr>
+                                    {(internetBills) ? internetBills.map((bill, index) => (
+                                        <tr key={bill.id}>
+                                            <th>{index + 1}</th>
+                                            <td>{bill.name}</td>
+                                            <td>{bill.dueDate}</td>
+                                            <td>৳ {bill.amount.toFixed(2)} Taka</td>
+                                            <td><span className={`badge badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span></td>
+                                            <td>
+                                                <div>
+                                                <button className="btn btn-sm btn-primary" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
+                                                    <dialog id="view_bill_modal" className="modal">
+                                                        <div className="modal-box w-11/12 max-w-5xl">
+                                                            <form method="dialog">
+                                                                {/* if there is a button in form, it will close the modal */}
+                                                                <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
+                                                            </form>
+                                                            <h3 className="font-bold text-lg text-center">View Bill</h3>
+                                                            <div className='divider'></div>
+                                                            <div className="py-4">
+                                                                {/* <PayBillSubmissionForm /> */}
+                                                            </div>
+                                                        </div>
+                                                    </dialog>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                {
+                                                    bill.status === 'Unpaid' ? (
+                                                        <div>
+                                                            <button className="btn btn-sm btn-success" onClick={() => document.getElementById('pay_bill_modal').showModal()}>Pay</button>
+                                                            <dialog id="pay_bill_modal" className="modal">
+                                                                <div className="modal-box w-11/12 max-w-5xl">
+                                                                    <form method="dialog">
+                                                                        {/* if there is a button in form, it will close the modal */}
+                                                                        <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
+                                                                    </form>
+                                                                    <h3 className="font-bold text-lg text-center">Pay Bill</h3>
+                                                                    <div className='divider'></div>
+                                                                    <div className="py-4">
+                                                                        {/* <PayBillSubmissionForm /> */}
+                                                                    </div>
+                                                                </div>
+                                                            </dialog>
+                                                        </div>
+
+                                                    ) : (
+                                                        <button className="btn btn-sm btn-success" disabled>Paid</button>
+                                                    )
+
+                                                }
+
+                                            </td>
+                                        </tr>
+                                    )) : ''}
                                 </tbody>
                             </table>
                         </div>
