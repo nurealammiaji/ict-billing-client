@@ -1,5 +1,6 @@
 import React from 'react';
 import { LuFilePlus } from "react-icons/lu";
+import BillCreationForm from '../../components/BillCreationForm/BillCreationForm';
 
 const Bills = () => {
 
@@ -63,7 +64,7 @@ const Bills = () => {
                                     <h3 className="font-bold text-lg text-center">New Bill</h3>
                                     <div className='divider'></div>
                                     <div className="py-4">
-                                        {/* <BillCreationForm /> */}
+                                        <BillCreationForm />
                                     </div>
                                 </div>
                             </dialog>
@@ -96,7 +97,7 @@ const Bills = () => {
                                             <td><span className={`badge badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span></td>
                                             <td>
                                                 <div>
-                                                <button className="btn btn-sm btn-primary" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
+                                                    <button className="btn btn-sm btn-primary" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
                                                     <dialog id="view_bill_modal" className="modal">
                                                         <div className="modal-box w-11/12 max-w-5xl">
                                                             <form method="dialog">

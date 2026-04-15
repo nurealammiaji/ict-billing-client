@@ -6,11 +6,13 @@ import { TbLayoutSidebarLeftExpand } from 'react-icons/tb';
 import { LuMenu } from "react-icons/lu";
 import Menu from './components/Menu/Menu';
 import bg from '/bg.png';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
 
   return (
     <div>
+      <ToastContainer />
       <div className="drawer lg:drawer-open">
         <input
           id="layout-drawer"
