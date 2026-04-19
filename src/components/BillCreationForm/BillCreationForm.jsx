@@ -3,7 +3,8 @@ import { toast } from 'react-toastify';
 
 const BillCreationForm = () => {
 
-    const notify = () => toast('Submitted Successfully !');
+    const billCreationSuccessNotify = () => toast.success('Bill Created Successfully !');
+    const billCreationErrorNotify = () => toast.error('Failed to create bill !');
 
 
     const issuer = [
@@ -56,8 +57,9 @@ const BillCreationForm = () => {
         //     permanent: form.permanent.value,
         // }
         // console.log(student);
+        billCreationSuccessNotify();
+        // billCreationErrorNotify();
         document.getElementById("new_bill_creation_modal").close();
-        notify();
     };
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css'
 import Home from './pages/Home/Home';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { TbLayoutSidebarLeftExpand } from 'react-icons/tb';
 import { LuMenu } from "react-icons/lu";
 import Menu from './components/Menu/Menu';
@@ -28,7 +28,9 @@ const App = () => {
               {/* <TbLayoutSidebarLeftExpand className='text-warning text-2xl' /> */}
               <LuMenu className='text-2xl' />
             </label>
-            <div className="px-4 text-2xl font-semibold">ICT Billing</div>
+            <Link to="/">
+              <div className="px-4 text-2xl font-semibold">ICT Billing</div>
+            </Link>
           </nav>
           {/* Page content here */}
           <div className="bg-fixed bg-center bg-cover min-h-screen" style={{ backgroundImage: `url(${bg})` }}>

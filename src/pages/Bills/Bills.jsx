@@ -83,7 +83,6 @@ const Bills = () => {
                                         <th>Amount</th>
                                         <th>Status</th>
                                         <th>Action</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -94,51 +93,69 @@ const Bills = () => {
                                             <td>{bill.name}</td>
                                             <td>{bill.dueDate}</td>
                                             <td>৳ {bill.amount.toFixed(2)} Taka</td>
-                                            <td><span className={`badge badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span></td>
                                             <td>
-                                                <div>
-                                                    <button className="btn btn-sm btn-primary" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
-                                                    <dialog id="view_bill_modal" className="modal">
-                                                        <div className="modal-box w-11/12 max-w-5xl">
-                                                            <form method="dialog">
-                                                                {/* if there is a button in form, it will close the modal */}
-                                                                <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
-                                                            </form>
-                                                            <h3 className="font-bold text-lg text-center">View Bill</h3>
-                                                            <div className='divider'></div>
-                                                            <div className="py-4">
-                                                                {/* <PayBillSubmissionForm /> */}
-                                                            </div>
-                                                        </div>
-                                                    </dialog>
-                                                </div>
+                                                <span className={`badge badge-soft badge-outline badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span>
                                             </td>
                                             <td>
-                                                {
-                                                    bill.status === 'Unpaid' ? (
-                                                        <div>
-                                                            <button className="btn btn-sm btn-success" onClick={() => document.getElementById('pay_bill_modal').showModal()}>Pay</button>
-                                                            <dialog id="pay_bill_modal" className="modal">
-                                                                <div className="modal-box w-11/12 max-w-5xl">
-                                                                    <form method="dialog">
-                                                                        {/* if there is a button in form, it will close the modal */}
-                                                                        <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
-                                                                    </form>
-                                                                    <h3 className="font-bold text-lg text-center">Pay Bill</h3>
-                                                                    <div className='divider'></div>
-                                                                    <div className="py-4">
-                                                                        {/* <PayBillSubmissionForm /> */}
-                                                                    </div>
+                                                <div className="join join-vertical lg:join-horizontal">
+                                                    <>
+                                                        <button className="btn btn-xs join-item btn-info" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
+                                                        <dialog id="view_bill_modal" className="modal">
+                                                            <div className="modal-box w-11/12 max-w-5xl">
+                                                                <form method="dialog">
+                                                                    {/* if there is a button in form, it will close the modal */}
+                                                                    <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
+                                                                </form>
+                                                                <h3 className="font-bold text-lg text-center">View Bill</h3>
+                                                                <div className='divider'></div>
+                                                                <div className="py-4">
+                                                                    {/* <PayBillSubmissionForm /> */}
                                                                 </div>
-                                                            </dialog>
-                                                        </div>
+                                                            </div>
+                                                        </dialog>
+                                                    </>
+                                                    {
+                                                        bill.status === 'Unpaid' ? (
+                                                            <>
+                                                                <button className="btn btn-xs btn-success join-item" onClick={() => document.getElementById('pay_bill_modal').showModal()}>Pay</button>
+                                                                <dialog id="pay_bill_modal" className="modal">
+                                                                    <div className="modal-box w-11/12 max-w-5xl">
+                                                                        <form method="dialog">
+                                                                            {/* if there is a button in form, it will close the modal */}
+                                                                            <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
+                                                                        </form>
+                                                                        <h3 className="font-bold text-lg text-center">Pay Bill</h3>
+                                                                        <div className='divider'></div>
+                                                                        <div className="py-4">
+                                                                            {/* <PayBillSubmissionForm /> */}
+                                                                        </div>
+                                                                    </div>
+                                                                </dialog>
+                                                            </>
 
-                                                    ) : (
-                                                        <button className="btn btn-sm btn-success" disabled>Paid</button>
-                                                    )
+                                                        ) : (
+                                                            <button className="btn btn-xs join-item btn-success" disabled>Paid</button>
+                                                        )
 
-                                                }
-
+                                                    }
+                                                    <>
+                                                        <button className="btn btn-xs join-item btn-warning" onClick={() => document.getElementById('edit_bill_modal').showModal()}>Edit</button>
+                                                        <dialog id="edit_bill_modal" className="modal">
+                                                            <div className="modal-box w-11/12 max-w-5xl">
+                                                                <form method="dialog">
+                                                                    {/* if there is a button in form, it will close the modal */}
+                                                                    <button className="btn btn-sm btn-circle btn-error btn-outline absolute right-2 top-2 tooltip tooltip-left" data-tip={"Close"}>✕</button>
+                                                                </form>
+                                                                <h3 className="font-bold text-lg text-center">Edit Bill</h3>
+                                                                <div className='divider'></div>
+                                                                <div className="py-4">
+                                                                    {/* <PayBillSubmissionForm /> */}
+                                                                </div>
+                                                            </div>
+                                                        </dialog>
+                                                    </>
+                                                    <button className="btn btn-xs btn-error join-item">Delete</button>
+                                                </div>
                                             </td>
                                         </tr>
                                     )) : ''}
