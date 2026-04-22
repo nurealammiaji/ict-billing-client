@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const BillCreationForm = () => {
 
@@ -33,14 +34,14 @@ const BillCreationForm = () => {
         },
     ];
 
-    const handleStudentAddForm = (e) => {
+    const handleInternetBillAddForm = (e) => {
         e.preventDefault();
-        // const form = e.target;
-        // const student = {
-        //     studentID: form.studentID.value,
-        //     studentName: form.studentName.value,
-        //     dob: form.dob.value,
-        //     version: form.dob.value,
+        const form = e.target;
+        const internetBill = {
+            billNo: form.billNo.value,
+            consumerName: form.consumerName.value,
+            appointment: form.appointment.value,
+            unitName: form.unitName.value,
         //     studentClass: form.studentClass.value,
         //     session: form.session.value,
         //     section: form.section.value,
@@ -55,8 +56,8 @@ const BillCreationForm = () => {
         //     guardian: form.mother.value,
         //     present: form.present.value,
         //     permanent: form.permanent.value,
-        // }
-        // console.log(student);
+        }
+        console.log(internetBill);
         billCreationSuccessNotify();
         // billCreationErrorNotify();
         document.getElementById("new_bill_creation_modal").close();
@@ -64,23 +65,23 @@ const BillCreationForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleStudentAddForm} className="bg-base-200 border-base-300 rounded-box border p-4">
+            <form onSubmit={handleInternetBillAddForm} className="bg-base-200 border-base-300 rounded-box border p-4">
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div className='w-full'>
-                        <label className="label">Serial</label>
-                        <input type="text" name='itemsName' className="input w-full" placeholder="type student name here" />
+                        <label className="label">Bill No</label>
+                        <input type="text" name='billNo' className="input w-full" placeholder="type bill number here" />
                     </div>
                     <div className='w-full'>
-                        <label className="label">Item's Name</label>
-                        <input type="text" name='itemsName' className="input w-full" placeholder="type student name here" />
+                        <label className="label">Consumer Name</label>
+                        <input type="text" name='consumerName' className="input w-full" placeholder="type consumer name here" />
                     </div>
                     <div className='w-full'>
-                        <label className="label">Item's Serial</label>
-                        <input type="text" name='itemsSerial' className="input w-full" placeholder="type student name here" />
+                        <label className="label">Appointment</label>
+                        <input type="text" name='appointment' className="input w-full" placeholder="type appointment here" />
                     </div>
                     <div className='w-full'>
-                        <label className="label">Item's Quantity</label>
-                        <input type="text" name='itemsQuantity' className="input w-full" placeholder="type student name here" />
+                        <label className="label">Unit Name</label>
+                        <input type="text" name='unitName' className="input w-full" placeholder="type unit name here" />
                     </div>
                     <div className='w-full'>
                         <label className="label">Date of Issue</label>

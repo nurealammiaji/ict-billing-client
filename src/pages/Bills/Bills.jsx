@@ -1,6 +1,7 @@
 import React from 'react';
-import { LuFilePlus } from "react-icons/lu";
+import { LuBanknote, LuEye, LuFilePlus, LuPencilLine, LuTrash2 } from "react-icons/lu";
 import BillCreationForm from '../../components/BillCreationForm/BillCreationForm';
+import Swal from 'sweetalert2';
 
 const Bills = () => {
 
@@ -27,6 +28,25 @@ const Bills = () => {
             status: "Unpaid"
         }
     ];
+
+    const handleDeleteBill = () => {
+        Swal.fire({
+            title: `Are you sure, to delete this bill?`,
+            text: `This action cannot be undone.`,
+            icon: "warning",
+            backdrop: false,
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete!"
+        }).then((result) => {
+            if (result.isConfirmed) Swal.fire({
+                title: "Deleted!",
+                text: `The bill has been deleted.`,
+                icon: "success"
+            });
+        });
+    };
 
     return (
         <div>
@@ -99,7 +119,7 @@ const Bills = () => {
                                             <td>
                                                 <div className="join join-vertical lg:join-horizontal">
                                                     <>
-                                                        <button className="btn btn-xs join-item btn-info" onClick={() => document.getElementById('view_bill_modal').showModal()}>View</button>
+                                                        <button className="btn btn-xs btn-outline join-item btn-info" onClick={() => document.getElementById('view_bill_modal').showModal()}><LuEye className='text-sm' /> View</button>
                                                         <dialog id="view_bill_modal" className="modal">
                                                             <div className="modal-box w-11/12 max-w-5xl">
                                                                 <form method="dialog">
@@ -117,7 +137,7 @@ const Bills = () => {
                                                     {
                                                         bill.status === 'Unpaid' ? (
                                                             <>
-                                                                <button className="btn btn-xs btn-success join-item" onClick={() => document.getElementById('pay_bill_modal').showModal()}>Pay</button>
+                                                                <button className="btn btn-xs btn-outline btn-success join-item" onClick={() => document.getElementById('pay_bill_modal').showModal()}><LuBanknote className='text-sm' /> Pay</button>
                                                                 <dialog id="pay_bill_modal" className="modal">
                                                                     <div className="modal-box w-11/12 max-w-5xl">
                                                                         <form method="dialog">
@@ -134,12 +154,12 @@ const Bills = () => {
                                                             </>
 
                                                         ) : (
-                                                            <button className="btn btn-xs join-item btn-success" disabled>Paid</button>
+                                                            <button className="btn btn-xs join-item btn-success" disabled><LuBanknote className='text-sm' /> Paid</button>
                                                         )
 
                                                     }
                                                     <>
-                                                        <button className="btn btn-xs join-item btn-warning" onClick={() => document.getElementById('edit_bill_modal').showModal()}>Edit</button>
+                                                        <button className="btn btn-outline btn-xs join-item btn-warning" onClick={() => document.getElementById('edit_bill_modal').showModal()}><LuPencilLine className='text-sm' /> Edit</button>
                                                         <dialog id="edit_bill_modal" className="modal">
                                                             <div className="modal-box w-11/12 max-w-5xl">
                                                                 <form method="dialog">
@@ -154,7 +174,7 @@ const Bills = () => {
                                                             </div>
                                                         </dialog>
                                                     </>
-                                                    <button className="btn btn-xs btn-error join-item">Delete</button>
+                                                    <button onClick={handleDeleteBill} className="btn btn-outline btn-xs btn-error join-item"><LuTrash2 className='text-sm' /> Delete</button>
                                                 </div>
                                             </td>
                                         </tr>

@@ -33,7 +33,7 @@ const App = () => {
             </Link>
           </nav>
           {/* Page content here */}
-          <div className="bg-fixed bg-center bg-cover min-h-screen" style={{ backgroundImage: `url(${bg})` }}>
+          <div className="bg-fixed bg-cover min-h-screen" style={{ backgroundImage: `url(${bg})` }}>
             <div className="absolute inset-0 bg-black/50"></div>
             <div className='relative z-10 h-full'>
               <Outlet />
