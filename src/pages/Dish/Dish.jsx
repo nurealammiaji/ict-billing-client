@@ -5,7 +5,7 @@ const Dish = () => {
 
   const dishPackOne = {
     name: "Dish TV Pack",
-    price: "$15",
+    price: 15,
     remark: { text: "Popular", show: false },
     features: [
       { text: "Access to 100+ channels", deleted: false },
@@ -16,7 +16,7 @@ const Dish = () => {
   };
   const dishPackTwo = {
     name: "Dish TV Pack Plus",
-    price: "$25",
+    price: 25,
     remark: { text: "Most Popular", show: true },
     features: [
       { text: "Access to 200+ channels", deleted: false },

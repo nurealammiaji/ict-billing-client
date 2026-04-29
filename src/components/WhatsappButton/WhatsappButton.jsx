@@ -1,22 +1,24 @@
 import React from 'react';
 import { TbBrandWhatsapp } from "react-icons/tb";
 
-const WhatsappButton = () => {
+const WhatsappButton = ({params}) => {
 
-    // Data from Server
-    const number = "01913112871";
-    const complaintNo = "455";
-    const complaintURL = `http://erp.dscsc.mil.bd:8088/complaint/complaints/${complaintNo}`;
-    const message = `Dear Sir, please give a feedback on your solved complaint. URL: ${complaintURL}`;
+    const id = params?.id;
+    const mobileNo = params?.mobileNo;
+    const billNo = params?.billNo;
+    const dueDate = params?.dueDate;
+    const amount = params?.amount;
+    const status = params?.status;
+    const message = `Dear Sir, please pay your bill with bill no ${billNo} as soon as possible. Thank you!`;
 
     // Function
-    const notifyForFeedback = () => {
-        window.open(`https://wa.me/+88${number}?text=${message}`, '_blank')
+    const notifyForBillPay = () => {
+        window.open(`https://wa.me/+88${mobileNo}?text=${message}`, '_blank')
     }
 
     return (
         <div>
-            <button className="btn tooltip bg-[#03C755] text-white border-[#00b544]" onClick={notifyForFeedback} data-tip="Notify for Feedback"><span><TbBrandWhatsapp className='' /></span><span>Notify</span></button>
+            <button className="btn btn-xs tooltip bg-[#03C755] text-white border-[#00b544]" onClick={notifyForBillPay} data-tip="Notify for Bill Payment"><span><TbBrandWhatsapp className='' /></span><span>Notify</span></button>
         </div>
     );
 };

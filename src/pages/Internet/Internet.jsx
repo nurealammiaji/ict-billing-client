@@ -5,7 +5,7 @@ const Internet = () => {
 
     const internetPackOne = {
         name: "Basic Pack",
-        price: "$19",
+        price: 19,
         remark: { text: "Popular", show: false },
         features: [
             { text: "Up to 100 Mbps download speed", deleted: false },
@@ -18,7 +18,7 @@ const Internet = () => {
     const internetPackTwo = {
         name: "Premium Pack",
         remark: { text: "Most Popular", show: true },
-        price: "$29",
+        price: 29,
         features: [
             { text: "Up to 500 Mbps download speed", deleted: false },
             { text: "Unlimited data usage", deleted: false },

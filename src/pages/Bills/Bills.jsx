@@ -2,6 +2,7 @@ import React from 'react';
 import { LuBanknote, LuEye, LuFilePlus, LuPencilLine, LuTrash2 } from "react-icons/lu";
 import BillCreationForm from '../../components/BillCreationForm/BillCreationForm';
 import Swal from 'sweetalert2';
+import WhatsappButton from '../../components/WhatsappButton/WhatsappButton';
 
 const Bills = () => {
 
@@ -9,24 +10,31 @@ const Bills = () => {
         {
             id: 1,
             name: "John Doe",
+            mobileNo: "01913112871",
             amount: 50,
             dueDate: "2024-07-15",
-            status: "Unpaid"
+            status: "Unpaid",
+            billNo: "INT-000001"
         },
         {
             id: 2,
             name: "Jane Smith",
+            mobileNo: "01913112872",
             amount: 75,
             dueDate: "2024-07-20",
-            status: "Paid"
+            status: "Paid",
+            billNo: "INT-000002"
+
         },
         {
             id: 3,
             name: "Alice Johnson",
+            mobileNo: "01913112873",
             amount: 100,
             dueDate: "2024-07-25",
-            status: "Unpaid"
-        }
+            status: "Unpaid",
+            billNo: "INT-000003"
+        },
     ];
 
     const handleDeleteBill = () => {
@@ -34,10 +42,12 @@ const Bills = () => {
             title: `Are you sure, to delete this bill?`,
             text: `This action cannot be undone.`,
             icon: "warning",
-            backdrop: false,
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
+            customClass: {
+                confirmButton: 'btn btn-info btn-outline mr-3',
+                cancelButton: 'btn btn-error btn-outline'
+            },
+            buttonsStyling: false,
             confirmButtonText: "Yes, delete!"
         }).then((result) => {
             if (result.isConfirmed) Swal.fire({
@@ -99,9 +109,11 @@ const Bills = () => {
                                     <tr>
                                         <th>S/N</th>
                                         <th>Name</th>
+                                        <th>Bill No</th>
                                         <th>Due Date</th>
                                         <th>Amount</th>
                                         <th>Status</th>
+                                        <th>Notification</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -111,10 +123,14 @@ const Bills = () => {
                                         <tr key={bill.id}>
                                             <th>{index + 1}</th>
                                             <td>{bill.name}</td>
+                                            <td><button className='' onClick={() => document.getElementById('view_bill_modal').showModal()}>{bill.billNo}</button></td>
                                             <td>{bill.dueDate}</td>
                                             <td>৳ {bill.amount.toFixed(2)} Taka</td>
                                             <td>
                                                 <span className={`badge badge-soft badge-outline badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span>
+                                            </td>
+                                            <td>
+                                                {bill.status === 'Unpaid' ? <WhatsappButton params={bill} /> : <span className='text-sm text-gray-500'>No action needed</span>}
                                             </td>
                                             <td>
                                                 <div className="join join-vertical lg:join-horizontal">
