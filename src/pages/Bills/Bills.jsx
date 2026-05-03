@@ -64,7 +64,7 @@ const Bills = () => {
                 <div>
                     <h1 className='text-4xl font-bold text-center text-white underline underline-offset-10'>All Bills</h1>
                 </div>
-                <div className='pt-10 w-[80%] mx-auto'>
+                <div className='pt-10 w-[90%] mx-auto'>
                     <div className='flex flex-row-reverse justify-between'>
                         <div className='text-end'>
                             <label className="input w-[60%]">
@@ -110,9 +110,9 @@ const Bills = () => {
                                         <th>S/N</th>
                                         <th>Name</th>
                                         <th>Bill No</th>
+                                        <th>Status</th>
                                         <th>Due Date</th>
                                         <th>Amount</th>
-                                        <th>Status</th>
                                         <th>Notification</th>
                                         <th>Action</th>
                                     </tr>
@@ -124,11 +124,11 @@ const Bills = () => {
                                             <th>{index + 1}</th>
                                             <td>{bill.name}</td>
                                             <td><button className='' onClick={() => document.getElementById('view_bill_modal').showModal()}>{bill.billNo}</button></td>
-                                            <td>{bill.dueDate}</td>
-                                            <td>৳ {bill.amount.toFixed(2)} Taka</td>
                                             <td>
                                                 <span className={`badge badge-soft badge-outline badge-xs ${bill.status === 'Paid' ? 'badge-success' : 'badge-error'}`}>{bill.status}</span>
                                             </td>
+                                            <td>{bill.dueDate}</td>
+                                            <td>৳ {bill.amount.toFixed(2)} Taka</td>
                                             <td>
                                                 {bill.status === 'Unpaid' ? <WhatsappButton params={bill} /> : <span className='text-sm text-gray-500'>No action needed</span>}
                                             </td>

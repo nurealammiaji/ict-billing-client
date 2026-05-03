@@ -7,18 +7,6 @@ const BillCreationForm = () => {
     const billCreationSuccessNotify = () => toast.success('Bill Created Successfully !');
     const billCreationErrorNotify = () => toast.error('Failed to create bill !');
 
-
-    const issuer = [
-        {
-            id: 1,
-            name: "Cpl Kamrul"
-        },
-        {
-            id: 2,
-            name: "Sgt Al Amin"
-        },
-    ];
-
     const consumerTypes = [
         {
             id: 1,
@@ -30,7 +18,7 @@ const BillCreationForm = () => {
         },
         {
             id: 3,
-            name: "DS"
+            name: "Perm Offr"
         },
     ];
 
